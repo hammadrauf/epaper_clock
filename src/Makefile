@@ -2,17 +2,17 @@
 MCU?=atmega328p
 
 # This is the Low-power stand alone chip configuration.
-CLOCK_MODE ?= USE_32K_CRYSTAL
-UART_MODE ?= HARDWARE_UART
-F_CPU ?= 8000000
+#CLOCK_MODE ?= USE_32K_CRYSTAL
+#UART_MODE ?= HARDWARE_UART
+#F_CPU ?= 8000000
 
 # This is the easy-to-build firmware that is based on an Ardino Nano
-#CLOCK_MODE ?= USE_CPU_CRYSTAL
-#UART_MODE ?= SOFTWARE_UART
-#F_CPU ?= 16000000
+CLOCK_MODE ?= USE_CPU_CRYSTAL
+UART_MODE ?= SOFTWARE_UART
+F_CPU ?= 16000000
 
 # Uncomment to activate debug via the UART TX (9600 baud)
-#DEBUG_CFLAG := -DDEBUG
+DEBUG_CFLAG := -DDEBUG
 
 CFLAGS := \
     -DSSD1680 \

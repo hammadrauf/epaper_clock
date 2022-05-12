@@ -328,10 +328,20 @@ static time_t loop(time_t next_update) {
 int main(void) {
   init();
   time_t next_update = snapshot_time_y2k();
+  
+  //HMR - Message via Serial USB - UART
+  /*
+  uint8_t uart_flags = 0;
+  uart_flags |= ENABLE_TX;
+  uart_init(9600, uart_flags);
+  uart_str("Welcome to epaper_clock.\n");
+  */
 
   while (1) {
     wait_for_next_second();
     next_update = loop(next_update);
+    //HMR
+    //uart_str("tick...\n");
   }
 }
 
